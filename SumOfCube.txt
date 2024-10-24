@@ -1,0 +1,51 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+import java.util.Scanner;
+
+public class Main {
+
+    
+    public static int sumOfCubes(int M, int N) {
+        if (M > N) {
+            System.out.println("M should be less than or equal to N");
+            return 0;
+        }
+        int sum = 0;
+        for (int i = M; i <= N; i++) {
+            sum += i * i * i; 
+        }
+        return sum;
+    }
+
+    
+    public static int calculateTicketCost(int age, int numTickets) {
+        int ticketPrice;
+        if (age >= 60) {
+            ticketPrice = 30;  
+        } else if (age <= 12) {
+            ticketPrice = 20;  
+        } else {
+            ticketPrice = 50;  
+        }
+        return ticketPrice * numTickets;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the value of M: ");
+        int M = sc.nextInt();
+        System.out.print("Enter the value of N: ");
+        int N = sc.nextInt();
+        int cubeSumResult = sumOfCubes(M, N);
+        System.out.println("Sum of cubes from " + M + " to " + N + ": " + cubeSumResult);
+
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+        System.out.print("Enter the number of tickets: ");
+        int numTickets = sc.nextInt();
+        int totalCost = calculateTicketCost(age, numTickets);
+        System.out.println("Total cost for " + numTickets + " tickets: " + totalCost);
+    }
+}
